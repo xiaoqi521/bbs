@@ -43,7 +43,6 @@ def index():
 	login = True
 	token = uuid.uuid4()
 	csrf_tokens[ str(token) ] = u.id
-	print(u)
 	return render_template('topic/index.html', ms=ms, bs=bs, token=token, user=u, login=login)
 
 
