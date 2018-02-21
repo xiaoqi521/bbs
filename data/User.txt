@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "username": "admin",
+    "password": "1be6af03717a0906a774a129ac467fcea8f89849df003548a8039cffffb12baf",
+    "admin": true,
+    "user_image": "default.png",
+    "email": "191393337@qq.com",
+    "url": "191393337@qq.com",
+    "location": "成都",
+    "weibo": "weibo",
+    "github": "xiaoqi521",
+    "signature": "明天你好!",
+    "integral": 9999
+  },
+  {
+    "id": 2,
+    "username": "123",
+    "password": "1be6af03717a0906a774a129ac467fcea8f89849df003548a8039cffffb12baf",
+    "admin": false,
+    "user_image": "0f035acc-0412-4b63-a45e-c37b43441347.jpg",
+    "email": "",
+    "url": "",
+    "location": "",
+    "weibo": "",
+    "github": "",
+    "signature": "",
+    "integral": 30
+  }
+]

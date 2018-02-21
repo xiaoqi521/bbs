@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "views": 52,
+    "title": "Python 入门 教程推荐",
+    "content": "廖雪峰 Python 教程 or 简明 Python 教程",
+    "ct": 1519199874,
+    "ut": 1519199874,
+    "user_id": 1,
+    "board_id": 1
+  },
+  {
+    "id": 2,
+    "views": 23,
+    "title": "python flask 框架 学习",
+    "content": "from flask import (\r\n    render_template,\r\n    request,\r\n    redirect,\r\n    url_for,\r\n    Blueprint,\r\n)\r\n\r\nfrom routes import *\r\n\r\nfrom models.topic import Topic\r\n\r\nmain = Blueprint('topic', __name__)\r\n\r\n'''\r\ntopic路由 在这里可以\r\n   主题 index\r\n   详情 detail\r\n   发布话题 new\r\n   增加内容 add\r\n每一个路由会先检查session,查不到用户就会定向到登录页面   \r\n'''\r\n\r\n\r\n@main.route(\"/\")\r\ndef index():\r\n    u = current_user()\r\n    if u is None:\r\n        return redirect(url_for('index.index'))\r\n    ms = Topic.all()\r\n    return render_template(\"topic/index.html\", ms=ms)\r\n\r\n\r\n@main.route('/<int:id>')\r\ndef detail(id):\r\n    u = current_user()\r\n    if u is None:\r\n        return redirect(url_for('index.index'))\r\n    m = Topic.get(id)\r\n    # 传递 topic 的所有 reply 到 页面中\r\n    return render_template(\"topic/detail.html\", topic=m)\r\n\r\n\r\n@main.route(\"/add\", methods=[ \"POST\" ])\r\ndef add():\r\n    u = current_user()\r\n    if u is None:\r\n        return redirect(url_for('index.index'))\r\n    form = request.form\r\n    m = Topic.new(form, user_id=u.id)\r\n    return redirect(url_for('.detail', id=m.id))\r\n\r\n\r\n@main.route(\"/new\")\r\ndef new():\r\n    u = current_user()\r\n    if u is None:\r\n        return redirect(url_for('index.index'))\r\n    return render_template(\"topic/new.html\")\r\n",
+    "ct": 1519208285,
+    "ut": 1519208285,
+    "user_id": 2,
+    "board_id": 1
+  }
+]

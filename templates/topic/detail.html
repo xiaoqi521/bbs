@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- meta -->
+    <meta charset="utf-8"/>
+    <link title="RSS" type="application/rss+xml" rel="alternate" href="/rss"/>
+
+
+    <link rel="icon" href="//o4j806krb.qnssl.com/public/images/cnode_icon_32.png" type="image/x-icon"/>
+
+
+    <!-- style -->
+    <link rel="stylesheet" href="//o4j806krb.qnssl.com/public/stylesheets/index.min.bdd5dd43.min.css" media="all"/>
+
+
+    <!-- scripts -->
+    <script src="//o4j806krb.qnssl.com/public/index.min.aeb155e1.min.js"></script>
+    <title>bbs</title>
+    <meta content="_csrf" name="csrf-param">
+    <meta content="IofrFxBs-_tUIpxX_LIpPOq0NpxqFAFj4mmI" name="csrf-token">
+</head>
+<body>
+<!-- navbar -->
+<div class='navbar'>
+    <div class='navbar-inner'>
+        <div class='container'>
+            <a class='brand' href='/'>
+                <img src=""/>
+
+            </a>
+
+            <form id='search_form' class='navbar-search' action="/search">
+                <input type='text' id='q' name='q' class='search-query span3' value=''/>
+            </form>
+            <ul class='nav pull-right'>
+                <li><a href='{{ url_for('.index') }}'>首页</a></li>
+                <li><a href='/topic/1'>新手入门</a></li>
+                <li><a href="/about" target="">关于</a></li>
+                {% if login == false %}
+
+                    <li><a href='{{ url_for('index.register') }}'>注册</a></li>
+                    <li><a href='{{ url_for('index.index') }}'>登录</a></li>
+                {% else %}
+                   <li><a href='/user/{{ my.username }}'>个人主页</a></li>
+                     <li><a href='{{ url_for('index.logout') }}' data-method="post" rel="nofollow">退出</a></li>
+                {% endif %}
+
+
+            </ul>
+            <a class="btn btn-navbar" id="responsive-sidebar-trigger">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+        </div>
+    </div>
+</div>
+<div id='main'>
+    <div id='sidebar'>
+        <div class='panel'>
+            <div class='header'>
+                <span class='col_fade'>作者</span>
+            </div>
+            <div class='inner'>
+                <div class='user_card'>
+                    <div>
+                        <a class='user_avatar' href="/user/atian25">
+                            <img src="/uploads/{{ user.id}}?v=3&amp;s=120" title="{{ user.username }}"/>
+                        </a>
+                        <span class='user_name'><a class='dark' href="/user/atian25">{{ user.username }}</a></span>
+
+                        <div class='board clearfix'>
+                            <div class='floor'>
+                                <span class='big'>积分: {{ user.integral }} </span>
+                            </div>
+                        </div>
+                        <div class="space clearfix"></div>
+                        <span class="signature">
+        “
+
+            追求卓越，成功就会在不经意间追上你。
+
+        ”
+    </span>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <div class='panel'>
+            <div class='inner ads'>
+
+
+                <a href="https://0x7.me/UDyj" target="_blank" class="banner sponsor_outlink"
+                   data-label="qiniu-sidebar">
+                    <img src="//dn-cnode.qbox.me/Fv9R31Y6ySKKJi95ldk9TRkJ7o5O">
+                </a>
+
+
+                <div class="sep10"></div>
+
+                <a href="https://alinode.aliyun.com/?ref=cnode" target="_blank" class="banner sponsor_outlink"
+                   data-label="alinode">
+                    <img src="//dn-cnode.qbox.me/Fn4D6BhOTz1IswvmzeZ1q7QW1ls_">
+                </a>
+
+
+                <div class="sep10"></div>
+
+                <a href="http://www.ucloud.cn/site/active/gift.html?utm_source=cnodejs&utm_medium=content_pic_pc&utm_campaign=multicloud&utm_content=gift&ytag=cnodejs"
+                   target="_blank" class="banner sponsor_outlink"
+                   data-label="ucloud-banner">
+                    <img src="//dn-cnode.qbox.me/FgQS-GQDfqwAD_v0NuhyYUOUk5MG">
+                </a>
+
+            </div>
+        </div>
+
+
+        <div class='panel'>
+            <div class='header'>
+                <span class='col_fade'>作者其它话题</span>
+            </div>
+            <div class='inner'>
+
+                <ul class='unstyled'>
+                    <li>
+                        <div><a class='dark topic_title' href="/topic/59f98c34c8ef9425668ac1fe"
+                                title="Node 8 LTS 有 async 了很兴奋？ 来，说说这 2 段代码的区别。">Node 8 LTS 有 async 了很兴奋？ 来，说说这 2
+                            段代码的区别。</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div><a class='dark topic_title' href="/topic/59faded263db6ac51afed9c7"
+                                title="[eggjs-feed-05] Node 8 LTS + Egg 2.x 计划">[eggjs-feed-05] Node 8 LTS + Egg 2.x
+                            计划</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div><a class='dark topic_title' href="/topic/596d770c8f05de0819fdb2b5"
+                                title="做个调查，你的 Node 应用有单元测试吗？">做个调查，你的 Node 应用有单元测试吗？</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div><a class='dark topic_title' href="/topic/58d0fb3517f61387400b7e15"
+                                title="Egg.js 1.0.0 正式发布 - 企业级 Node.js 框架">Egg.js 1.0.0 正式发布 - 企业级 Node.js 框架</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div><a class='dark topic_title' href="/topic/59524ec7984e31dd458c14ab"
+                                title="值得关注的 eggjs 动态 03 期">值得关注的 eggjs 动态 03 期</a>
+                        </div>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+
+        <div class='panel'>
+            <div class='header'>
+                <span class='col_fade'>无人回复的话题</span>
+            </div>
+            <div class='inner'>
+
+                <ul class='unstyled'>
+                    <li>
+                        <div><a class='dark topic_title' href="/topic/5a8bf26b71327bb413bbfd41" title="NodeJS爬虫——立马理财">NodeJS爬虫——立马理财</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div><a class='dark topic_title' href="/topic/5a8bf25171327bb413bbfd40"
+                                title="github自动提交——强迫症救星！">github自动提交——强迫症救星！</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div><a class='dark topic_title' href="/topic/5a8bf1aa8d6e16e56bb807bd" title="博客内容管理系统">博客内容管理系统</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div><a class='dark topic_title' href="/topic/5a8b94528d6e16e56bb807ba" title="echarts 单轴散点">echarts
+                            单轴散点</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div><a class='dark topic_title' href="/topic/5a866afe2580af301494a68d" title="题图
+深入理解React源码 - 界面更新（单个DOM元素） VIII">题图
+                            深入理解React源码 - 界面更新（单个DOM元素） VIII</a>
+                        </div>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+    <div id='content'>
+        <div class='panel'>
+            <div class='header topic_header'>
+       <span class="topic_full_title">
+			{{ topic.title }}
+      	</span>
+                <div class="changes">
+            <span>
+                发布于 2 天前
+            </span>
+                    <span>
+                作者
+                <a href="/user/{{ user.username }}">{{ user.username }}</a>
+        	</span>
+                    <span>
+          	    {{ topic.views }} 次浏览
+        	</span>
+                    <span>
+                来自 {{ board.title }}
+            </span>
+                </div>
+            </div>
+
+            <div class='inner topic'>
+                <div class='topic_content'>
+                    <div class="markdown-text">
+                        {{ topic.content }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class='panel'>
+        <div class='header'>
+            <span class='col_fade'>
+                <!-- 过滤器 -->
+                {{ topic.replies() | count }} 回复
+            </span>
+        </div>
+        {% for r in topic.replies() %}
+            <div class='cell reply_area reply_item'>
+                <div class='author_content'>
+                    <a href="/user/leiwei1991" class="user_avatar">
+                        <img src="/uploads/{{ r.user().id }}?v=3&amp;s=120"
+                             title="{{ r.user().username }}"/>
+                    </a>
+                    <div class='user_info'>
+                        <a class='dark reply_author'>
+                            {{ r.user().username }}
+                        </a>
+                        <a class="reply_time">
+                            {{ loop.index }}楼 • 2 天前
+                        </a>
+                    </div>
+                    <div class='user_action'>
+                    <span>
+                        <i class="fa up_btn
+                          fa-thumbs-o-up
+                          invisible" title="喜欢"></i>
+                        <span class="up-count">
+                        </span>
+                    </span>
+                    </div>
+                </div>
+                <div class='reply_content from-leiwei1991'>
+                    <div class="markdown-text">
+                        {{ r.content }}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        <div>
+            <form action="{{ url_for('reply.add') }}" method="post">
+                <input type="hidden" name="topic_id" value="{{ topic.id }}">
+                <textarea name="content"></textarea>
+                <button>添加回复</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
