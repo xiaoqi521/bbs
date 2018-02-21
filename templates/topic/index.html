@@ -80,7 +80,7 @@
                         <div class="cell">
                             <div class="topic_title_wrapper">
                                 <a class="user_avatar pull-left">
-                                    <img src={{ '/uploads/' + t.user_id|string  + '?v=3&amp;s=120' }}title="{{ t.user_id|string }}"/>
+                                    <img src=/uploads/{{ user.id}}?v=3&amp;s=120" title="{{ t.user_id|string }}"/>
                                 </a>&nbsp;&nbsp;
                                 <a class="topic_title" href="{{ url_for('topic.detail', id=t.id) }}">
                                     {{ t.title }}
