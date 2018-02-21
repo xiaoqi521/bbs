@@ -91,7 +91,7 @@ def login():
 		return redirect(url_for('topic.index'))
 
 
-@main.route('/logout')
+@main.route('/logout', methods=[ 'GET' ])
 def logout():
 	# 清除session用户信息
 	session[ 'user_id' ] = None
