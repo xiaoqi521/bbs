@@ -81,12 +81,11 @@ def add():
 
 @main.route('/delete')
 def delete():
-	id = int(request.args.get('id', -1))
-	token = request.args.get('token')
 	u = current_user()
 	if u is None:
 		return redirect(url_for('index.index'))
-
+	id = int(request.args.get('id', -1))
+	token = request.args.get('token')
 	if token in csrf_tokens and csrf_tokens[ token ] == u.id:
 		csrf_tokens.pop(token)
 		if u.admin == True:
