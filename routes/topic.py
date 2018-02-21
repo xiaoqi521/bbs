@@ -86,13 +86,15 @@ def delete():
 	id = int(request.args.get('id', -1))
 	token = request.args.get('token')
 	u = current_user()
+	if u is None:
+		return redirect(url_for('index.index'))
 	if token in csrf_tokens and csrf_tokens[ token ] == u.id:
 		csrf_tokens.pop(token)
-		if u is not None and u.admin == True:
+		if u.admin == True:
 			log('topic id 为:', id, '被id为:', u.id, '的用户删除!')
 			Topic.delete(id)
 			return redirect(url_for('.index'))
 		else:
-			return redirect(url_for('index.index'))
+			return redirect(url_for('.index'))
 	else:
 		abort(403)
