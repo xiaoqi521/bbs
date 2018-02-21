@@ -46,7 +46,6 @@ def index():
 	return render_template('topic/index.html', ms=ms, bs=bs, token=token, user=u, login=login)
 
 
-
 @main.route('/<int:id>')
 def detail(id):
 	u = current_user()
@@ -54,7 +53,6 @@ def detail(id):
 	# 传递 topic 的所有 reply 到 页面中
 	user = User.get(id=t.user_id)
 	board = Board.get(id=t.board_id)
-
 	if u is None:
 		login = False
 		return render_template('topic/detail.html', topic=t, user=user, board=board, login=login)
@@ -88,6 +86,7 @@ def delete():
 	u = current_user()
 	if u is None:
 		return redirect(url_for('index.index'))
+
 	if token in csrf_tokens and csrf_tokens[ token ] == u.id:
 		csrf_tokens.pop(token)
 		if u.admin == True:
