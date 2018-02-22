@@ -20,7 +20,7 @@ ln -s /var/www/bbs/bbs.nginx /etc/nginx/sites-enabled/bbs
 ➜  ~ cat /etc/supervisor/conf.d/bbs.conf
 
 [program:bbs]
-command=/usr/local/bin/gunicorn wsgi -c gunicorn.config.py
+command=/usr/local/bin/
 directory=/var/www/bbs
 autostart=true
 autorestart=true
