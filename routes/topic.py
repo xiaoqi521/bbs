@@ -79,7 +79,7 @@ def add():
 	return redirect(url_for('.detail', id=m.id))
 
 
-@main.route('/delete')
+@main.route('/delete', methods=[ "GET" ])
 def delete():
 	u = current_user()
 	if u is None:
