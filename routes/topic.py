@@ -95,4 +95,4 @@ def delete():
 		else:
 			return redirect(url_for('.index'))
 	else:
-		abort(403)
+		return redirect(url_for('.index'))
