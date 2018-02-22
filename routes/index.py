@@ -120,7 +120,7 @@ def setting():
 	for k, v in form.items():
 		setattr(u,k,v)
 		u.save()
-	return redirect(url_for('index.user'))
+	return redirect(url_for('index.user',username=u.username))
 
 
 
